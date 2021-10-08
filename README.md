@@ -13,19 +13,19 @@ pip install uecli
 - シラバスを検索
 
 ```sh
-python3 -m uecli syllabus search -s 'コンピュータサイエンス'
+uecli syllabus search -s 'コンピュータサイエンス'
 ```
 
 - シラバスを取得し、Markdown形式で表示
 
 ```sh
-python3 -m uecli --markdown syllabus get --year 2021 -t 31 -c 21124255
+uecli --markdown syllabus get --year 2021 -t 31 -c 21124255
 ```
 
 - 2021年度前期の成績を取得
 
 ```sh
-python3 -m uecli grades --year 2021 --semester 1 get
+uecli grades --year 2021 --semester 1 get
 ```
 
 ## 認証

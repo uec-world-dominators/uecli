@@ -1,6 +1,7 @@
 from uecauth.shibboleth import ShibbolethAuthenticator
 from uecauth.password import DefaultPasswordProvider, PromptingPasswordProvider
 from uecauth.mfa import AutoTOTPMFAuthCodeProvider, PromptingMFAuthCodeProvider
+from uecauth.errors import MaximumAttemptsExceededError, OldRequestError
 
 from campussquare.cli import Authenticator
 from campussquare.util import get_flow_execution_key
@@ -54,8 +55,12 @@ class UECCampusSquareAuthenticator(Authenticator):
         )
 
     def refresh(self) -> CampusSquare:
-        print('refreshing...', file=sys.stderr)
-        res = self.shibboleth.login(self.campusweb_url)
+        print('認証情報を更新しています...', file=sys.stderr)
+        try:
+            res = self.shibboleth.login(self.campusweb_url)
+        except Exception as e:
+            print(f'認証に失敗しました: {e}', file=sys.stderr)
+
         return CampusSquare(
             self.campusweb_do_url,
             get_flow_execution_key(res.url),

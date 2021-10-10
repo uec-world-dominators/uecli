@@ -1,2 +1,2 @@
-uecauth>=0.0.8
+uecauth>=0.0.10
 campussquare>=0.0.4

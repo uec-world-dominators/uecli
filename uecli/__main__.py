@@ -1,12 +1,14 @@
+import argparse
 from campussquare.cli import get_parser, parse_args_with_handler
 from .authenticator import UECCampusSquareAuthenticator
-import argparse
+from . import info
 
 campussquare_commands = ['syllabus', 'grades']
 
 
 def main():
     parser = argparse.ArgumentParser('uecli')
+    parser.add_argument('--version', '-V', action='version', version=f'{info.name} {info.version}')
     parser.add_argument('command', choices=[*campussquare_commands])
     parser.add_argument('args', nargs='*')
     args, _ = parser.parse_known_args()

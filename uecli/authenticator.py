@@ -60,6 +60,7 @@ class UECCampusSquareAuthenticator(Authenticator):
             res = self.shibboleth.login(self.campusweb_url)
         except Exception as e:
             print(f'認証に失敗しました: {e}', file=sys.stderr)
+            exit(1)
 
         return CampusSquare(
             self.campusweb_do_url,

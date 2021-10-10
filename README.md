@@ -28,6 +28,12 @@ uecli --markdown syllabus get --year 2021 -t 31 -c 21324235
 uecli grades --year 2021 --semester 1 get
 ```
 
+- 図書館で借りている本を表示
+
+```sh
+uecli library status
+```
+
 ## 認証
 
 認証には以下の方法があります

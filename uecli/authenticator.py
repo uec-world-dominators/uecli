@@ -1,7 +1,6 @@
 from uecauth.shibboleth import ShibbolethAuthenticator
 from uecauth.password import DefaultPasswordProvider, PromptingPasswordProvider
 from uecauth.mfa import AutoTOTPMFAuthCodeProvider, PromptingMFAuthCodeProvider
-from uecauth.errors import MaximumAttemptsExceededError, OldRequestError
 
 from campussquare.cli import Authenticator
 from campussquare.util import get_flow_execution_key

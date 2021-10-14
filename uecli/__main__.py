@@ -18,7 +18,6 @@ def main():
 
     if args.command in campussquare_commands:
         # Campus Square commands
-        print(sys.argv)
         parser = campussquare.cli.get_parser(authenticator=UECCampusSquareAuthenticator())
         campussquare.cli.parse_args_with_handler(parser)
     elif args.command == library_command:

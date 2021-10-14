@@ -19,7 +19,15 @@ uecli syllabus search -s 'コンピュータサイエンス'
 - シラバスを取得し、Markdown形式で表示
 
 ```sh
-uecli --markdown syllabus get --year 2021 -t 31 -c 21324235
+uecli --markdown syllabus get 2021:31:21324235
+uecli --markdown syllabus get 2021:31:21324235 2021:31:21124208 --delimiter '%%%%%'
+# 年度:所属コード:時間割コード
+```
+
+- 履修科目一覧を表示
+
+```sh
+uecli --json courses
 ```
 
 - 2021年度前期の成績を取得

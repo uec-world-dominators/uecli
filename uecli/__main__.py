@@ -5,7 +5,7 @@ import limedio.cli
 from .authenticator import UECCampusSquareAuthenticator, UECLibraryAuthenticator
 from . import info
 
-campussquare_commands = ['syllabus', 'grades', 'courses']
+campussquare_commands = ['syllabus', 'grades', 'courses', 'top']
 library_command = 'library'
 
 

@@ -1,3 +1,3 @@
 uecauth>=0.0.10
-campussquare>=0.0.9
-limedio>=0.0.2
+campussquare>=0.0.11
+limedio>=0.0.3
